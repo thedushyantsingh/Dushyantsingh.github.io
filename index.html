@@ -14,10 +14,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+
 <body>
+    
 
     <!-- header design -->
     <header class="header">
+        
         <a href="#" class="logo">Portfolio</a>
 
         <i class='bx bx-menu' id="menu-icon"></i>
@@ -206,8 +209,8 @@
             <!-- .input-box was used here  -->
             <div class="input-box">
                 <!-- input was used here  -->
-                <input type="text" name="Name" placeholder="Full Name">
-                <input type="email" name="Email" placeholder="Email Address">
+                <input type="text" name="Name" placeholder="Full Name*" required>
+                <input type="email" name="Email" placeholder="Email Address*" required>
             </div>
 
             <!-- .input-box was used here  -->
@@ -255,7 +258,7 @@
             e.preventDefault()
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(response => {
-                    msg.innerHTML = "Message sent successfully"
+                    msg.innerHTML = 'Thanks for getting in touch! Our team will be in contact with you shortly.&#x1F44D;';
                     setTimeout(function () {
                         msg.innerHTML = ""
                     }, 5000)
