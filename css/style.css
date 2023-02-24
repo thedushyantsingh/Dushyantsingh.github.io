@@ -521,3 +521,9 @@ span {
         margin-top: 2rem;
     }
 }
+
+#msg{
+    color: blueviolet;
+    margin-top: 20px;
+    display: block;
+}
