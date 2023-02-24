@@ -564,6 +564,14 @@ span {
 
 #msg{
     color: var(--text-color);
-    margin-top: 20px;
+    padding: 20px;
+    margin: 20px auto 0;
     display: block;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
 }
+
+
+
+
