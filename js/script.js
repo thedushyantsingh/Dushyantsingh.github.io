@@ -60,3 +60,20 @@ const typed =  new Typed('.multiple-text', {
     backDelay: 1000,
     loop: true
 });
+
+// send button 
+const sendButton = document.getElementById('send-button');
+const contactForm = document.querySelector('.contact form');
+
+contactForm.addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+
+  // Add the "sending" class to the button
+  sendButton.classList.add('sending');
+
+  // Simulate sending the message (replace this with your actual sending code)
+  setTimeout(function () {
+    // Remove the "sending" class from the button
+    sendButton.classList.remove('sending');
+  }, 3000); // Wait for 3 seconds to simulate sending
+});
