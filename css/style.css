@@ -570,7 +570,7 @@ span {
     }
 }
 
-@media (max-width: 365px) {
+@media (max-width: 395px) {
     .home-img img {
         width:90vw;
     }
@@ -599,6 +599,18 @@ span {
     font-family: Arial, sans-serif;
 }
 
+.contact form .btn.sending {
+    background-color: red;
+    /* Change the background color to red */
+    cursor: not-allowed;
+    /* Change the cursor to indicate that the button is disabled */
+    animation: buffering 1s linear infinite;
+    /* Add a buffering animation */
+}
 
+.contact form .btn.sent {
+    background-color: green;
+    /* Change the background color to green once the message is sent */
+}
 
 
