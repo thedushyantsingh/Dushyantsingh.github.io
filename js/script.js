@@ -9,34 +9,42 @@ menuIcon.onclick = () => {
 
 // scroll sectiom  active link
 let sections = document.querySelectorAll('section');
-let navlinks = document.querySelectorAll('header nav a');
+let navLinks = document.querySelectorAll('header nav a');
+let header = document.querySelector('header');
 
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+window.addEventListener('scroll', () => {
+  // Add active class to current navigation link
+  let current = '';
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 150;
+    const sectionHeight = section.clientHeight;
 
-        if(top >= offset && top < offset + height ) {
-            navlinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            });
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
 
-        };
-    });
+  navLinks.forEach((link) => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').slice(1) === current) {
+      link.classList.add('active');
+    }
+  });
 
-    // sticky nav bar 
-    let header = document.querySelector('header');
-
-    header.classList.toggle('sticky', window.scrollY > 100);
-
-
-    // remove toggle icon  and navbar when click navbar link (scroll)
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
-};
+  // Make navbar sticky
+  if (window.pageYOffset > 100) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
+  }
+  
+  
+  
+  // remove toggle icon  and navbar when click navbar link (scroll)
+  menuIcon.classList.remove('bx-x');
+  navbar.classList.remove('active');
+  
+});
 
 
 // scroll reveal
